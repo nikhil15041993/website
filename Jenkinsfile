@@ -7,7 +7,7 @@ pipeline {
                 label 'staging'
             }
             steps {
-                mkdir staging-test
+                echo "hello staging"
             }
             
         }
@@ -16,7 +16,7 @@ pipeline {
                 label 'production'
             }
             steps {
-                  mkdir staging-production
+                  echo "hello-production"
             }
            
         }
