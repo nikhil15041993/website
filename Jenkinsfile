@@ -7,7 +7,7 @@ pipeline {
                 label 'staging'
             }
             steps {
-                echo "hello staging"
+                touch staging
             }
             
         }
@@ -16,7 +16,7 @@ pipeline {
                 label 'production'
             }
             steps {
-                  echo "hello-production"
+                  touch production
             }
            
         }
