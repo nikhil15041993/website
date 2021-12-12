@@ -7,7 +7,7 @@ pipeline {
                 label 'staging'
             }
             steps {
-               sudo mkdir staging-test
+                mkdir staging-test
             }
             
         }
@@ -16,7 +16,7 @@ pipeline {
                 label 'production'
             }
             steps {
-                 sudo mkdir staging-production
+                  mkdir staging-production
             }
            
         }
