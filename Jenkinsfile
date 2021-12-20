@@ -1,17 +1,32 @@
+// Declarative //
 pipeline {
     agent none
     stages {
-        stage('git-int') {
+        stage('Build') {
+            agent any
+            steps {
+                checkout scm
+                echo "checkout scm"
+            }
+        }
+        stage('Test on Linux') {
             agent { 
-                label "testing"
-                 git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
-                 
-                  }
-             steps {
-                echo "git int"
-             }
+                label 'testing'
+            }
+            steps {
+                echo "testing"
+            }
             
         }
-        
+        stage('Test on Windows') {
+            agent {
+                label 'production'
+            }
+            steps {
+                 echo "production"
+            }
+           
+        }
     }
 }
+
