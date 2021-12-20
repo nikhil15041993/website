@@ -14,7 +14,7 @@ pipeline {
                 label 'testing'
             }
             steps {
-                mkdir testing
+               sh mkdir testing
             }
             
         }
@@ -23,7 +23,7 @@ pipeline {
                 label 'production'
             }
             steps {
-                 mkdir production
+                 sh mkdir production
             }
            
         }
