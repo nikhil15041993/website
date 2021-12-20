@@ -14,7 +14,7 @@ pipeline {
                 label 'testing'
             }
             steps {
-               sudo mkdir testing
+               git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
             }
             
         }
@@ -23,7 +23,7 @@ pipeline {
                 label 'production'
             }
             steps {
-                 sudo mkdir production
+                 git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
             }
            
         }
