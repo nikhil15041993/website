@@ -9,6 +9,10 @@ pipeline {
                 echo "checkout scm"
             }
         }
+        
+        
+        
+        
         stage('git initilize') {
             agent { 
                 label 'testing'
@@ -20,6 +24,10 @@ pipeline {
             }
             
         }
+        
+        
+        
+        
         stage('creating a docker container from dockerfile') {
             agent {
                 label 'testing'
@@ -33,6 +41,8 @@ pipeline {
             }
            
         }
+        
+        
         
         
         stage('git initilize for production') {
