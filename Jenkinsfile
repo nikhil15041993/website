@@ -18,7 +18,7 @@ pipeline {
                 
                 sh '''sudo docker rm -f $(sudo docker ps -a -q)
 
-                sudo docker build /home/ubuntu/jenkins/workspace/git-int/ -t website1 
+                sudo docker build /home/ubuntu/jenkins/workspace/mypipelines -t website
 
                 sudo docker run -it -p 80:80 -d website1'''
             }
