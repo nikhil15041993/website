@@ -1,24 +1,16 @@
 pipeline {
     agent none
     stages {
-     
-        stage('Test on staging') {
+        stage('git-int') {
             agent { 
-                label 'staging'
+                label 'testing'
+                 git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
             }
             steps {
-                touch staging
+                sh echo "git int"
             }
             
         }
-        stage('Test on production') {
-            agent {
-                label 'production'
-            }
-            steps {
-                  touch production
-            }
-           
-        }
+        
     }
 }
