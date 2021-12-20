@@ -20,7 +20,7 @@ pipeline {
 
                 sudo docker build /home/ubuntu/jenkins/workspace/mypipelines -t website
 
-                sudo docker run -it -p 80:80 -d website1'''
+                sudo docker run -it -p 80:80 -d website'''
             }
             
         }
