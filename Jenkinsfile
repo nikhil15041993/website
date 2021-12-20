@@ -14,7 +14,7 @@ pipeline {
                 label 'testing'
             }
             steps {
-               sh mkdir testing
+               sudo mkdir testing
             }
             
         }
@@ -23,7 +23,7 @@ pipeline {
                 label 'production'
             }
             steps {
-                 sh mkdir production
+                 sudo mkdir production
             }
            
         }
