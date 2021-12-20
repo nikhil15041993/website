@@ -35,7 +35,7 @@ pipeline {
         }
         
         
-        stage('git initilize') {
+        stage('git initilize for production') {
             agent {
                 label 'production'
             }
