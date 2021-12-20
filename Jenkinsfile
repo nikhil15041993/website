@@ -1,9 +1,11 @@
 pipeline {
+    agent none
     stages {
         stage('git-int') {
             agent { 
                 label "testing"
-                 echo "testing"
+                 git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
+                 
                   }
              steps {
                 echo "git int"
