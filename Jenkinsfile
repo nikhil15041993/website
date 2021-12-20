@@ -9,27 +9,39 @@ pipeline {
                 echo "checkout scm"
             }
         }
-        stage('Test on Linux') {
+        stage('git initilize') {
             agent { 
                 label 'testing'
             }
             steps {
                git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
                 
-                sh '''sudo docker rm -f $(sudo docker ps -a -q)
-
-                sudo docker build /home/ubuntu/jenkins/workspace/mypipelines -t website
-
-                sudo docker run -it -p 80:80 -d website'''
+               
             }
             
         }
-        stage('Test on Windows') {
+        stage('creating a docker container from dockerfile') {
+            agent {
+                label 'testing'
+            }
+            steps {
+                  sh '''sudo docker rm -f $(sudo docker ps -a -q)
+
+                  sudo docker build /home/ubuntu/jenkins/workspace/mypipelines -t website
+
+                  sudo docker run -it -p 80:80 -d website'''
+            }
+           
+        }
+        
+        
+        stage('git initilize') {
             agent {
                 label 'production'
             }
             steps {
-                 git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
+                  git branch: 'main', url: 'https://github.com/nikhil15041993/website.git'
+                
             }
            
         }
