@@ -13,7 +13,6 @@ def deployApp() {
 
 def branchApp(){
     git branch: 'dev', url: 'https://github.com/nikhil15041993/website.git'
-    echo 'Pulling...' + env.BRANCH_NAME
-    checkout scm
+
 }
 return this
