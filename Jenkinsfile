@@ -45,6 +45,8 @@ pipeline {
     post {
   success {
     echo "I will always execute this!"
+      echo 'Pulling...' + env.BRANCH_NAME
+        checkout scm
   }
 }
 }
