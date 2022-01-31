@@ -40,6 +40,15 @@ pipeline {
                 }
             }
         }
+        
+        stage("git")
+        {
+            steps{
+                script {
+                    gv.branchApp()
+                }
+            }
+        }
     }  
     
     post {
