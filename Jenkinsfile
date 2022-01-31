@@ -40,6 +40,12 @@ pipeline {
                 }
             }
         }
-    }   
+    }  
+    
+    post {
+  success {
+    echo "I will always execute this!"
+  }
+}
 }
 
